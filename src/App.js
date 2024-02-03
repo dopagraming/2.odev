@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useState } from "react";
+import "./App.css";
 function App() {
+  const [value, setValue] = useState("");
+  const click = () => {
+    setValue("butona tiklandi");
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    {/* First way */}
+      <button onClick={() => setValue("butona tiklandi")}>first button</button>
+      {value != "" ? <h1>{value}</h1> : ""}
+    {/* Second way */}
+      {/* <button onClick={click}>second button</button>
+      {value != "" ? <h1>{value}</h1> : ""} */}
+    </>
   );
 }
 
